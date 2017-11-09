@@ -1,0 +1,15 @@
+(defun my-flatten(lst &key res)
+  (if (null lst) 
+      (reverse res)
+      (if (listp (car lst))
+	  (my-flatten (car lst) :res res)
+	  (progn
+	    (push (car lst) res)
+	    (my-flatten (cdr lst) :res res)))))(defun my-flatten(lst &key res)
+  (if (null lst) 
+      (reverse res)
+      (if (listp (car lst))
+	  (my-flatten (car lst) :res res)
+	  (progn
+	    (push (car lst) res)
+	    (my-flatten (cdr lst) :res res)))))
